@@ -1,0 +1,11 @@
+.h1 {
+    font-size: 100px;
+    margin-left: 80px;
+}
+
+.p {
+    font-size: 50px;
+    color: red;
+    display: flex;
+    justify-content:center ;
+}
