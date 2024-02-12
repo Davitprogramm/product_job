@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/product_job/static/css/main.b798fb8d.css",
+    "main.js": "/product_job/static/js/main.2438f3a6.js",
+    "static/media/image3.avif": "/product_job/static/media/image3.5fe2adca65b18a3beb2a.avif",
+    "index.html": "/product_job/index.html",
+    "main.b798fb8d.css.map": "/product_job/static/css/main.b798fb8d.css.map",
+    "main.2438f3a6.js.map": "/product_job/static/js/main.2438f3a6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b798fb8d.css",
+    "static/js/main.2438f3a6.js"
+  ]
+}
