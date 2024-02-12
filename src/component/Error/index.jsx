@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./style2.css"
+import "./style.css"
 export const Error = React.memo(() => {
     const [data, setData] = useState(null);
     const [error, setError] = useState(null);

@@ -1,35 +1,57 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import AnchorLink from "react-anchor-link-smooth-scroll";
-
+import React, { useEffect, useState } from "react";
 import "./style.css"
-export const Page6 = React.memo(() => {
+import AnchorLink from "react-anchor-link-smooth-scroll";
+import { Link } from "react-router-dom";
+export const Report = React.memo(() => {
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setError(new Error('շուտով'));
+            setIsLoading(false);
+        }, 3000); // Simulating a delay of 3 seconds before encountering an error
+
+        return () => clearTimeout(timer);
+    }, []);
     return (
         <div>
-            <img className="global11" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoAZneuXHbvIYHRJeRou8Xc0FUoEnhqNfX64Tdtbu8uVEHBiV7pqc9qO2FEZA0VQd6tJM&usqp=CAU" />
-            <div className="divs1">
-                <h1 className="divs1_h1">Ինտերնետ + TV Սակագնային Փաթեթներ Premium</h1>
-                <div className="divs1_divs1">
-                    <Link to={"/"} className="links1">Գլխավոր</Link>
-                    <p className="divs_1_p">|</p>
-                    <h1 className="divs1_h11">TV + Ինտերնետ</h1>
-                </div>
+            <div className="error">
+                {isLoading ? (
+                    <div class="spinner"></div>
+                ) : error ? (
+                    <div>
+                        <div class="terminal-title">Status</div>
+                        <div class="control close"></div>
+                        <div class="control minimize"></div>
+                        <div class="control maximize"></div>
+                        <div class="content">
+                            <Link to={"/"} class="text">{error.message}...</Link>
+                        </div>
+
+                    </div>
+
+
+                ) : (
+                    <p>Data loaded successfully!</p>
+                )}
             </div>
-            <div className="div7">
-                <div className="div7_1">
-                    <img className="div7_1_img" src="https://www.easypay.am/media/2022/11/16/a054af09dbb4adae40967b25ef8b8a8a7cf748c5.png" />
+
+            {/* <div className="div6">
+                <div className="div6_1">
+                    <img className="div6_1_img" src="https://www.easypay.am/media/2022/11/16/a054af09dbb4adae40967b25ef8b8a8a7cf748c5.png" />
                 </div>
-                <div className="div7_2">
-                    <AnchorLink className="linker" href="#div4">Փաթեթներ</AnchorLink>
-                    <AnchorLink className="linker" href="#div3_div1">Ծառայություններ</AnchorLink>
-                    <AnchorLink className="linker" href="#div5">Տան համար</AnchorLink>
+                <div className="div6_2">
+                    <h1 className="linker" href="#div4">Փաթեթներ</h1>
+                    <h1 className="linker" href="#div3_div1">Ծառայություններ</h1>
+                    <h1 className="linker" href="#div5">Տան համար</h1>
                     <Link to={"/biznes"} className="linker">Բիզնեսի համար</Link>
                 </div>
-                <div className="div7_3">
-                    <div className="div7_3_1">
+                <div className="div6_3">
+                    <div className="div6_3_1">
                         <button>
                             <span>Կապվել</span>
-                            <div className="container">
+                          <div className="container">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="39" height="39" fill="blue" class="bi bi-facebook" viewBox="0 0 16 16">
                                     <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
                                 </svg>
@@ -42,17 +64,17 @@ export const Page6 = React.memo(() => {
                             </div>
                         </button>
                     </div>
-                    <h1 className="div7_3_h1">davittorosyan0@gmail.com</h1>
-                    <div className="div7_3_h1">
+                    <h1 className="div6_3_h1">davittorosyan0@gmail.com</h1>
+                    <div className="div6_3_h1">
 
                         <div>
-                            <h1 className="div7_3_hh1"><i className="fa fa-phone" style={{ fontSize: "30px" }}></i>+374 94 55 12 94</h1>
-                            <h1 className="div7_3_hh1"><i className="fa fa-phone" style={{ fontSize: "30px" }}></i>+374 99 55 12 94</h1>
+                            <h1 className="div6_3_hh1"><i className="fa fa-phone" style={{ fontSize: "30px" }}></i>+374 94 55 12 94</h1>
+                            <h1 className="div6_3_hh1"><i className="fa fa-phone" style={{ fontSize: "30px" }}></i>+374 99 55 12 94</h1>
                         </div>
                     </div>
 
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 })

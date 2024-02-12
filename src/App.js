@@ -1,9 +1,11 @@
+
 import './App.css';
 import { Router } from './component/Router';
 
 function App() {
+  
   return (
-    <div >
+    <div>
       <Router />
     </div>
   );
